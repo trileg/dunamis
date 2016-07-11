@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<body>
+  {% if distribution == 'arch' %}
+    <h1>Arch Linux</h1>
+  {% elif distribution == 'debian' %}
+    <h1>Debian</h1>
+  {% elif distribution == 'redhat' %}
+    <h1>RedHat</h1>
+  {% else %}
+    <h1>Gentoo Linux</h1>
+  {% endif %}
+</body>
+</html>
