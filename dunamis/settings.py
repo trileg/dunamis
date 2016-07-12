@@ -60,10 +60,12 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.jinja2.Jinja2',
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
-            os.path.join(BASE_DIR, 'dms/templates')
+            os.path.join(BASE_DIR, 'dms/templates'),
+            os.path.join(BASE_DIR, 'ldap/templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
+            'environment': 'dunamis.jinja2.environment',
         },
     },
 ]
@@ -122,3 +124,13 @@ STATIC_URL = '/static/'
 
 
 DEFAULT_JINJA2_TEMPLATE_EXTENSION = '.jinja'
+
+AUTHENTICATION_BACKENDS = (
+    'ldap.backend.LDAPBackend',
+)
+LOGIN_REDIRECT_URL = '/dms/'
+LOGIN_URL = '/login/'
+
+LDAP_SERVER_ADDRESS = local_settings.LDAP_SERVER_ADDRESS
+LDAP_SERVER_PORT = local_settings.LDAP_SERVER_PORT
+LDAP_USER_BASEDN = local_settings.LDAP_USER_BASEDN

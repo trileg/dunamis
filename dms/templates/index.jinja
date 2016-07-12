@@ -1,5 +1,21 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>DMS</title>
+</head>
 <body>
+{#  {% if user.is_authenticated %}#}
+{#    <p>Current User:{{ user.username }}</p>#}
+{#  {% endif %}#}
+{##}
+  {# Show session detail #}
+{#  {% if session_info %}#}
+{#    <p>session_info: {{ session_info }}</p>#}
+{#  {% else %}#}
+{#    <p>no session.</p>#}
+{#  {% endif %}#}
+{##}
   {% if distribution == 'arch' %}
     <h1>Arch Linux</h1>
   {% elif distribution == 'debian' %}
@@ -9,5 +25,9 @@
   {% else %}
     <h1>Gentoo Linux</h1>
   {% endif %}
+
+  <div>
+    <a href="/logout">Logout</a>
+  </div>
 </body>
 </html>
