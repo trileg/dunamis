@@ -12,6 +12,7 @@ class Tree(models.Model):
     child_ids = models.CharField(verbose_name="カンマ区切りの子要素ID", blank=True)
 
     # Only when is_directory is 0
-    mimetype = models.CharField(verbose_name="ファイルのMIMEタイプ", max_length=255)
-    is_checkout = models.BooleanField(verbose_name="チェックアウトフラグ")
-    version = models.FloatField(verbose_name="バージョン情報")
+    mimetype = models.CharField(verbose_name="ファイルのMIMEタイプ", max_length=255,
+                                blank=True)
+    is_checkout = models.BooleanField(verbose_name="チェックアウトフラグ", blank=True)
+    version = models.FloatField(verbose_name="バージョン情報", blank=True)
