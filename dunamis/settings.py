@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'dms',
     'ldap',
+    'myauth',
     'django_jinja',
 ]
 
@@ -61,7 +62,7 @@ TEMPLATES = [
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
             os.path.join(BASE_DIR, 'dms/templates'),
-            os.path.join(BASE_DIR, 'ldap/templates'),
+            os.path.join(BASE_DIR, 'myauth/templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
