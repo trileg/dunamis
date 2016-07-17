@@ -127,6 +127,7 @@ STATIC_URL = '/static/'
 DEFAULT_JINJA2_TEMPLATE_EXTENSION = '.jinja'
 
 AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
     'ldap.backend.LDAPBackend',
 )
 LOGIN_REDIRECT_URL = '/dms/'
