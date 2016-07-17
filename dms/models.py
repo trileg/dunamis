@@ -9,7 +9,7 @@ class Tree(models.Model):
     is_directory = models.BooleanField(verbose_name="ディレクトリフラグ")
 
     # Only when is_directory is 1
-    child_ids = models.CharField(verbose_name="カンマ区切りの子要素ID", blank=True)
+    child_ids = models.TextField(verbose_name="カンマ区切りの子要素ID", blank=True)
 
     # Only when is_directory is 0
     mimetype = models.CharField(verbose_name="ファイルのMIMEタイプ", max_length=255,
