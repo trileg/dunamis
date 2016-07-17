@@ -130,7 +130,7 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'ldap.backend.LDAPBackend',
 )
-LOGIN_REDIRECT_URL = '/dms/'
+LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = '/login/'
 
 LDAP_SERVER_ADDRESS = local_settings.LDAP_SERVER_ADDRESS

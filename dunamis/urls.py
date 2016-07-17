@@ -23,5 +23,5 @@ urlpatterns = [
         {'template_name': 'login.jinja'}, name='login'),
     url(r'^logout/$', auth_views.logout,
         {'template_name': 'logged_out.jinja'}, name='logout'),
-    url(r'^dms/', include('dms.urls', namespace='dms')),
+    url(r'^', include('dms.urls', namespace='dms')),
 ]
