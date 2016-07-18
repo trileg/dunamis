@@ -1,20 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>DMS</title>
-</head>
-<body>
-  {% if user.is_authenticated %}
-    <p>Current User:{{ user.username }}</p>
-  {% endif %}
+{% extends "base.jinja" %}
+{% block header %}
+  <link href="{{ static('css/style.css') }}" rel="stylesheet">
+  <link href="{{ static('css/nav.css') }}" rel="stylesheet">
+{% endblock %}
 
-   Show session detail
-  {% if session_info %}
-    <p>session_info: {{ session_info }}</p>
-  {% else %}
-    <p>no session.</p>
-  {% endif %}
+{% block content %}
+  <div class="nav">
+    <div class="left-side">
+      <a class="item" href="#">Top</a>
+    </div>
+    <div class="right-side">
+      <a class="item" href="{{ url('logout') }}">Logout</a>
+      {% if user.is_authenticated %}
+        <a class="item" href="#">{{ user.username }}</a>
+      {% endif %}
+    </div>
+  </div>
 
   {% if distribution == 'arch' %}
     <h1>Arch Linux</h1>
@@ -25,9 +26,4 @@
   {% else %}
     <h1>Gentoo Linux</h1>
   {% endif %}
-
-  <div>
-    <a href="/logout">Logout</a>
-  </div>
-</body>
-</html>
+{% endblock %}
