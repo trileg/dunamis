@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Tree(models.Model):
-    parend_id = models.IntegerField(verbose_name="親ID")
+    parent_id = models.IntegerField(verbose_name="親ID")
     name = models.CharField(verbose_name="名称", max_length=255)
     owner_id = models.IntegerField(verbose_name="所有者ID")
     history = models.TextField(verbose_name="作業履歴")
