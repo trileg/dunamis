@@ -2,6 +2,7 @@
 {% block header %}
   <link href="{{ static('css/style.css') }}" rel="stylesheet">
   <link href="{{ static('css/nav.css') }}" rel="stylesheet">
+  <link href="{{ static('css/sidebar.css') }}" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
@@ -17,13 +18,22 @@
     </div>
   </div>
 
-  {% if distribution == 'arch' %}
-    <h1>Arch Linux</h1>
-  {% elif distribution == 'debian' %}
-    <h1>Debian</h1>
-  {% elif distribution == 'redhat' %}
-    <h1>RedHat</h1>
-  {% else %}
-    <h1>Gentoo Linux</h1>
-  {% endif %}
+  <div class="col-xs-2" id="sidebar">
+    <ul>
+      <li><a class="item" href="#">Hoge</a></li>
+      <li><a class="item" href="#">Fuga</a></li>
+    </ul>
+  </div>
+
+  <div class="col-xs-10" id="tree">
+    {% if distribution == 'arch' %}
+      <h1>Arch Linux</h1>
+    {% elif distribution == 'debian' %}
+      <h1>Debian</h1>
+    {% elif distribution == 'redhat' %}
+      <h1>RedHat</h1>
+    {% else %}
+      <h1>Gentoo Linux</h1>
+    {% endif %}
+  </div>
 {% endblock %}
